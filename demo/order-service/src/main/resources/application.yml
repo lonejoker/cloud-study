@@ -12,6 +12,8 @@ spring:
   cloud:
     nacos:
       server-addr: localhost:8848 # nacos服务地址
+      discovery:
+        cluster-name: xiaobai # 集群名称
 mybatis:
   type-aliases-package: com.xiaobai.pojo
   configuration:
@@ -30,7 +32,8 @@ eureka:
 # 自定义负载均衡
 userServer:
   ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
 
 # 饥饿加载
 #ribbon:
