@@ -6,6 +6,9 @@ spring:
     username: root
     password: 1q2w3e
     driver-class-name: com.mysql.cj.jdbc.Driver
+  # 微服务名称
+  application:
+    name: orderServer
 mybatis:
   type-aliases-package: com.xiaobai.pojo
   configuration:
@@ -15,3 +18,8 @@ logging:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+
+# eureka地址信息
+eureka:
+  client:
+    server-url: http://localhost:8761/eureka
