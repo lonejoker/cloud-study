@@ -12,6 +12,8 @@ spring:
   cloud:
     nacos:
       server-addr: localhost:8848 # nacos服务地址
+      discovery:
+        cluster-name: haha # 集群名称
 mybatis:
   type-aliases-package: com.xiaobai.pojo
   configuration:
