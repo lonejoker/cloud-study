@@ -15,6 +15,7 @@ spring:
       discovery:
         cluster-name: xiaobai # 集群名称
         namespace: 37e985ed-3703-45bb-9252-8e01e1b5f852 # 名称空间的id
+        ephemeral: false # 是否是临时实例 
 mybatis:
   type-aliases-package: com.xiaobai.pojo
   configuration:
