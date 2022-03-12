@@ -9,6 +9,9 @@ spring:
   # 微服务名称
   application:
     name: userServer
+  cloud:
+    nacos:
+      server-addr: localhost:8848 # nacos服务地址
 mybatis:
   type-aliases-package: com.xiaobai.pojo
   configuration:
@@ -21,6 +24,6 @@ logging:
 
 
 # eureka地址信息
-eureka:
-  client:
-    server-url: http://localhost:8761/eureka
+#eureka:
+#  client:
+#    server-url: http://localhost:8761/eureka
