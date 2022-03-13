@@ -22,3 +22,18 @@ spring:
 #            - After=2031-04-13T15:14:47.433+08:00[Asia/Shanghai]  # 像这样的规则，现在是 2031年4月13日01:32:42，很明显 After 条件不满足，可以不会转发，路由不起作用
       default-filters:
         - AddRequestHeader=sign, xiaobai # 添加请求头
+      globalcors: # 全局的跨域处理
+        add-to-simple-url-handler-mapping: true # 解决options请求被拦截问题
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: # 允许哪些网站的跨域请求 allowedOrigins: “*” 允许所有网站
+              - "http://localhost:8090"
+            allowedMethods: # 允许的跨域ajax的请求方式
+              - "GET"
+              - "POST"
+              - "DELETE"
+              - "PUT"
+              - "OPTIONS"
+            allowedHeaders: "*" # 允许在请求中携带的头信息
+            allowCredentials: true # 是否允许携带cookie
+            maxAge: 360000 # 这次跨域检测的有效期
