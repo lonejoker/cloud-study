@@ -1,13 +1,20 @@
 package com.xiaobai.controller;
 
+import com.xiaobai.config.PatternProperties;
 import com.xiaobai.pojo.User;
 import com.xiaobai.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author 终于白发始于青丝
@@ -20,10 +27,23 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/user")
+//@RefreshScope
 public class UserController {
 
     @Autowired
     private UserService userService;
+
+    //@Value("${pattern.dateformat}")
+    //private String dateformat;
+
+    @Autowired
+    private PatternProperties patternProperties;
+
+    @GetMapping("/now")
+    public String now(){
+        // 格式化时间
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern(patternProperties.getDateformat()));
+    }
 
     /**
      * 路径： /user/110
