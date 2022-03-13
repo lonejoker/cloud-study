@@ -66,6 +66,12 @@
 			<groupId>io.github.openfeign</groupId>
 			<artifactId>feign-httpclient</artifactId>
 		</dependency>
+		<!-- 引入feignapi依赖 -->
+		<dependency>
+			<groupId>com.xiaobai</groupId>
+			<artifactId>feign-api</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>mysql</groupId>

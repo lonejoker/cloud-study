@@ -1,7 +1,6 @@
 package com.xiaobai.clients;
 
 
-import com.xiaobai.config.DefaultFeignConfiguration;
 import com.xiaobai.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

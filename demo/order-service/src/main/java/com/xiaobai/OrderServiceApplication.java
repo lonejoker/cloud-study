@@ -1,5 +1,6 @@
 package com.xiaobai;
 
+import com.xiaobai.clients.UserClient;
 import com.xiaobai.config.DefaultFeignConfiguration;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -13,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @MapperScan("com.xiaobai.mapper")
 //@EnableEurekaClient
-@EnableFeignClients(defaultConfiguration = DefaultFeignConfiguration.class)  // 开启自动装配
+@EnableFeignClients(clients = UserClient.class,defaultConfiguration = DefaultFeignConfiguration.class)  // 开启自动装配
 public class OrderServiceApplication {
 
     public static void main(String[] args) {
